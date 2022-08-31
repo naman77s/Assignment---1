@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Horizontal Cards</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="icon" href="4.jpg" type="image/x-icon">
+</head>
+<style type="text/css">
+*{
+	margin:0; padding:0;
+	scroll-behavior:smooth;
+}
+body{
+	background:brown;
+	color:white; overflow:;
+}
+.container{
+	display:flex; position:relative;
+	justify-content:space-between;
+	align-items:center;
+	overflow-y:scroll;
+	height:100vh;
+	text-align:center;
+	background:transparent;
+	scroll-snap-type: x mandatory;
+}
+.container .cards{
+	display:inline-block;
+	height:70vh; width:auto;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	scroll-snap-align: center;
+	border-radius:5rem;
+	padding:0.5rem 5rem; margin:auto 2rem;
+	box-shadow:2px 5px 10px black;
+}
+.cards p{
+	margin:10rem auto 2rem auto;
+	font-size:2rem; font-weight:800;
+	text-shadow:1px 0 5px black;
+}
+.cards button{
+	background:none; outline:none;
+	padding:1rem 5rem; color: white;
+	font-size:1.3rem;
+	border:2px solid black;
+	border-radius:5rem;
+	backdrop-filter:blur(2px);
+	box-shadow:inset 1px 0 10px black;
+}
+.card-a{
+	background-image:url("1.jpg");
+}
+.card-b{
+	background-image:url("2.jpg");
+}
+.card-c{
+	background-image:url("3.jpg");
+}
+.card-d{
+	background-image:url("4.jpg");
+}
+.card-e{
+	background-image:url("5.jpg");
+}
+</style>
+<body>
+<marquee> Scroll Horizontally </marquee>
+<div class="container">
+	<div class="cards card-a">
+		<p>I AM CARD 1</p>
+		<button onlick="location.href='https://github.com/naman77s'">Github</button>
+	</div>
+	<div class="cards card-b">
+		<p>I AM CARD 2</p>
+		<button onlick="location.href='https://github.com/naman77s'">Github</button>
+	</div>
+	<div class="cards card-c">
+		<p>I AM CARD 3</p>
+		<button onlick="location.href='https://github.com/naman77s'">Github</button>
+	</div>
+	<div class="cards card-d">
+		<p>I AM CARD 4</p>
+		<button onlick="location.href='https://github.com/naman77s'">Github</button>
+	</div>
+	<div class="cards card-e">
+		<p>I AM CARD 5</p>
+		<button onlick="location.href='https://github.com/naman77s'">Github</button>
+	</div>
+</div>
+</body>
+</html>
