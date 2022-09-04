@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fixed Header</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="icon" href="4.jpg" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header>
+<div class="container">
+	<a href="#"><img src="5.jpg" alt="LOGO"></a>
+	<div class="navigate">
+		<a href="#home"><nav>Home</nav></a>
+		<a href="#products"><nav>Products</nav></a>
+		<a href="#contact"><nav>Contact Us</nav></a>
+	</div>
+</div>
+</header>
+<style type="text/css">
+*{
+	margin:0; padding:0;
+	scroll-behavior:smooth;
+	-webkit-tap-highlight-color:transparent;
+}
+.container{
+	display:flex; position:fixed;
+	justify-content:space-between;
+	align-items:center;
+	box-sizing:border-box;
+	top:0; left:0;
+	width:100vw; height:4rem;
+	background:black; color:white;
+	font-weight:700;
+	padding:1rem;
+	padding-right:0;
+	z-index:99;
+}
+	.container img{
+		height:3rem; width:3rem;
+		border-radius:50%;
+	}
+.container .navigate{
+	display:flex; position:;
+	flex-wrap:nowrap;
+	justify-content:flex-end;
+	align-items:center;
+	width:69vw; height:4rem;
+	right:0; overflow:hidden;
+}
+	.navigate nav{
+		position:;
+		align-items:center;
+		text-align:center;
+		transition:0.2s ease;
+		height:2.5rem; width:auto;
+		padding-left:1rem; padding-right:1rem;
+		padding-top:1.5rem;
+		overflow:hidden;
+	}	
+	.navigate nav:hover{
+		background:white; color:black;
+		transform:scale(1.1);
+		font-weight:900;
+	}
+a{
+	color:inherit;
+	text-decoration:none;
+}
+.block-a, .block-b{
+	display:grid; place-items:center;
+	text-align:center; overflow:hidden;
+	height:auto; width:auto;
+	margin-top:1.5rem; padding:5rem 0;
+	
+}
+	.block-a .landing-img{
+		width:50vw; height:60vw;
+		box-shadow:0 0 50px silver;
+		border-radius:2rem;
+	}
+		.landing-img.a{
+			margin-left:-5rem;
+		}
+		.landing-img.b{
+			margin-right:-5rem;
+		}
+	.block-a h1{
+		font-weight:900;
+		margin:1.5rem 0;
+		letter-spacing:15px;
+		font-size:1.7rem;
+		/*box-shadow:-3px -2px 1px black,inset -1px -3px 1px black;
+		background: darkred; border:5px solid darkred;
+		border-radius:2rem;*/ padding:0.4rem 1rem;
+		color: white;
+		background: brown;
+		width:100vw;
+	}
+	.block-a p{
+		font-size:1.5rem;
+		font-weight:900;
+		letter-spacing:1rem;
+		color:purple;
+		transform:rotate(90deg) translate(40%,-600%);
+	}
+.block-b{
+	display:block; position:relative;
+	text-align:center;
+	overflow:hidden;
+	background:transparent;
+	grid-template-columns:auto auto;
+	z-index:1;
+	height:auto;
+}
+.products{
+	display:grid; position:relative;
+	place-items:center; text-align:center;
+	overflow:scroll;
+	background:transparent;
+	grid-template-columns:auto auto;
+	z-index:1;
+	height:auto;
+}
+.block-b .cards{
+	display:grid; place-items:center;
+	text-align:center;
+	height:35vh; width:45vw;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	border-radius:2rem;
+	padding:auto; margin:auto ;
+	box-shadow:2px 5px 10px black;
+	margin-bottom:1.5rem;
+}
+.cards p{
+	font-size:1.4rem; font-weight:800;
+	text-shadow:1px 0 30px silver;
+	color:white; background:rgba(0,0,0,0.5);
+	width:100%; padding:0.1rem;
+}
+.cards button{
+	background:none; outline:none;
+	padding:0.8rem 1.9rem; color: white;
+	font-size:0.8rem;
+	font-weight:900;
+	border:2px solid black;
+	border-radius:5rem;
+	backdrop-filter:blur(2px);
+	box-shadow:inset 1px 0 1px black;
+	background:rgba(0,0,0,0.5);
+}
+	.card-a{
+		background-image:url("https://source.unsplash.com/random?product&sig=6&auto=webp&q=0");
+	}
+	.card-b{
+		background-image:url("https://source.unsplash.com/random?product&sig=7&auto=webp&q=0");
+	}
+	.card-c{
+		background-image:url("https://source.unsplash.com/random?product&sig=8&auto=webp&q=0");
+	}
+	.card-d{
+		background-image:url("https://source.unsplash.com/random?product&sig=9&auto=webp&q=0");
+	}
+	.card-e{
+		background-image:url("https://source.unsplash.com/random?product&sig=10&auto=webp&q=0");
+	}
+	.card-f{
+		background-image:url("https://source.unsplash.com/random?product&sig=1&auto=webp&q=0");
+	}
+.block-c{
+	display:block; position:relative;
+	box-sizing:border-box;
+	padding:2rem 7ren;
+	text-align:center;
+	font-size:2.5rem;
+	color:white;
+	background: #1c1c1c;
+	height:6rem; width:auto;
+}
+.block-c p{color:silver; font-size:1rem;}
+hr{
+	width:80vw; margin:auto;
+}
+</style>
+<body>
+<hr id="nouse">
+	<div id="home" class="block-a home">
+		<img class="landing-img a" src="https://source.unsplash.com/random?product&sig=1&auto=webp&q=0"><br>
+		<h1>Shop Now!</h1><br>
+		<img class="landing-img b" src="https://source.unsplash.com/random?product&sig=2&auto=webp&q=5">
+	</div>
+<hr align="center">
+	
+	<div id="products"class="block-b">
+		<h2> <pre><code> &lt;&lt; Premium Products on sale &gt;&gt; </code></pre></h2><br><br>
+		<div class="products">
+		<div class="cards card-a">
+			<p>Product-1</p>
+			<button onclick="alert('products')">View ¬</button>
+		</div>
+		<div class="cards card-b">
+			<p>Product-2</p>
+			<button onclick="alert('products')">View ¬</button>
+		</div>
+		<div class="cards card-c">
+			<p>Product-3</p>
+			<button onclick="alert('products')">View ¬</button>
+		</div>
+		<div class="cards card-d">
+			<p>Product-4</p>
+			<button onclick="alert('products')">View ¬</button>
+		</div>
+		<div class="cards card-e">
+			<p>Product-5</p>
+			<button onclick="alert('products')">View ¬</button>
+		</div>
+		<div class="cards card-f">
+			<p>Product-6</p>
+			<button onclick="alert('products')">View ¬</button>
+		</div>
+		</div>
+	</div>
+<hr align="center">
+	<footer id="contact" class="block-c contact">
+		<a href="https://github.com/naman77s" class="fa fa-github"></a><br>
+		<p> Final Assignment </p>
+	</footer>
+</body>
+</html>
