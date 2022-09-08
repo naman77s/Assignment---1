@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dice Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="icon" href="4.jpg" type="image/x-icon">
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+	.container{
+		display:block;
+		background:black; color:white;
+		top:0; left:0; box-sizing:border-box;
+		padding:1.5rem 2rem;
+		text-align:center;
+		height:97vh; width:100vw;
+		overflow:hidden;
+	}
+	.container h1 span{
+	color:red;
+	}
+	.container button{
+		border:1px solid red;
+		border-radius:5rem;
+		background:none; outline:none;
+		padding:1rem;
+		text-align:center;
+		margin:2rem auto 15rem auto;
+		font-size:1rem;
+		font-weight:900;
+		letter-spacing:0.1rem;
+		color:white;
+		box-shadow:inset 0px -2px 10px lime;
+		height:4rem; width:12rem;
+		transition:0.2s linear;
+	}
+	.container button:hover{
+		box-shadow:inset 0px 2px 10px lime;
+	}
+	.container .content{
+		display:grid; place-items:center;
+		height:20rem; width:20rem;
+		margin:auto; padding:0.5rem;
+		text-align:center; 
+		font-size:1.7rem;
+		font-weight:700;
+		background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,30.5)),url('https://source.unsplash.com/random?dice');
+		background-position:center; background-repeat:no-repeat;
+		background-size:cover;
+		border-radius:2rem;
+		box-shadow:inset 1px 0 40px grey;
+		transition:0.2s linear;
+	}
+	.content:hover{
+		transform:translateY(-1rem);
+	}
+	marquee{
+		background:black; color:white;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<h1> Roll the <span>Dice!!</span> </h1>
+		<button id="btn-roll" onclick="getRes()"> Click to Roll </button>
+		<div class="content" id="result">
+			YOUR RESULT WILL BE SHOWN HERE
+		</div>
+	</div>
+<marquee> Images are generated from unsplash.com</marquee>
+<script type="text/javascript">
+	const res = document.getElementById("result");
+	const randon = Math.floor(Math.random() * 6);
+	function getRes(){
+			const randon = Math.floor(Math.random() * 6);
+			res.innerText = "YAY! you got : " + randon;
+	}
+</script>
+</body>
+</html>
