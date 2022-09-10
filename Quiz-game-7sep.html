@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="icon" href="4.jpg" type="image/x-icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+</head>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Combo&display=swap');
+*{
+	margin:0; padding:0;
+	font-family: 'Combo', cursive;
+}
+body{
+	background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),url('https://source.unsplash.com/random?money&q=10&auto=webp');
+	background-repeat:no-repeat; background-size:cover; background-position:center;
+	height:auto; overflow:hidden;
+}
+.container{
+	display:grid; place-items:center;
+	margin:1rem; padding:1rem 4rem;
+	background:rgba(0,0,0,0.1);
+	height:auto; width:auto;
+	border-radius:2rem;
+	background:transparent;
+	backdrop-filter:blur(2px);
+	box-shadow:inset 0 0 50px aqua;
+	color:orange;
+
+}
+	.container h1{
+		color:white;
+		font-size:3.5rem;
+		text-decoration:overline underline;
+		padding:0.1rem; 
+		text-shadow:2px 2px 1px grey,0px 0px 5px silver;
+	}
+	.container button{
+		margin:0.3rem 0.5rem;
+		padding:0.8rem 1rem; font-size:1rem;
+		font-weight:700; color:black;
+		border:none; border-radius:2rem;
+		width:60vw;
+		letter-spacing:0.1rem;
+	}
+		.container button:hover{
+			background:aqua;
+		}
+.data{
+	display:block;
+	margin-bottom:2rem;
+}
+.score-btn{
+	display:block; position:absolute;
+	top:50%; left:-2rem; margin:;
+	height:auto; width:auto;
+	padding:1rem 1.5rem; font-size:1.2rem;
+	background:orange;
+	border-radius:2rem;
+	transform:rotate(-90deg);
+	font-family:helvetica;
+	box-shadow:inset 0px -5px 10px teal, inset 0px 5px 10px silver;
+}
+</style>
+<body>
+	<div class="container" id="container">
+		<h1>Quiz Game</h1><br>
+	</div>
+<div class="score-btn" id="score"> SCORE : ? </div>
+	
+<script type="text/javascript">
+const container = document.getElementById("container");
+const start = document.getElementById("start");
+const score = document.getElementById("score");
+const qs = [{
+	ques : "Q. Who is the father of computer?",
+	ops : ["Charles Baggage" , "Charles Babbage" , "Guido Vent"],
+	ans : function(){
+			return this.ops[1];
+		}
+	},
+	{
+	ques : "Q. Who introduced Python?",
+	ops : ["Guido van Rossum" , "Teachers" , "Me"],
+	ans : function(){
+		return this.ops[0];
+		}
+	},
+	{
+	ques : "Q. What was your 12th grade?",
+	ops : ["More than 90%" , "90%" , "Less than 90%"],
+	ans : function(){
+		return this.ops[2];
+		}
+	}
+];
+for(i=0; i < 3; i++){
+let data = ` <div class="data" id="data">
+				<h3> ${qs[i].ques} </h3>
+				<button id="${i}" onclick="check(event);" class="choose">${qs[i].ops[0]}</button>
+				<button id="${i}" onclick="check(event)" class="choose">${qs[i].ops[1]}</button>
+				<button id="${i}" onclick="check(event)" class="choose">${qs[i].ops[2]}</button>
+			</div>
+			`;
+			container.insertAdjacentHTML("beforeend" , data);
+}let s = 1;
+function check() {
+	if(event.target.innerHTML === qs[event.target.id].ans(this)){
+		event.target.style.background = "orange";
+		score.textContent = "SCORE : " + ++s;
+	}else{
+		event.target.style.background = "red";
+		score.textContent = "SCORE : " + --s;
+	}
+	if(s<=0){
+		alert("You lost the quiz, Try Again!");
+		window.location.reload();
+	}
+	else if(s>3){
+		alert("You won the game 🥳🥳🎉 , Let's replay");
+		 let replay = confirm("Wanna Replay?");
+		 	if(replay){
+			 	window.location.reload();
+			}
+	}
+}
+
+</script>
+</body>
+</html>
